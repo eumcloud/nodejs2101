@@ -1,0 +1,5 @@
+# 개발자가 되면 buffer로 데이터 처리효율을 높이는게 일상이 될것.
+# String, num 등은 하나의 oject이므로 전송에 불리함을 가짐.
+# buffer로 전환하여 전송 후 사용할때만 오브젝트로 이용.
+
+assembly langua
