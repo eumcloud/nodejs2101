@@ -11,7 +11,9 @@ app.get("/hello/:name/:id", (req, res)=>{
     res.send("ID : "+ req.params.id + " name " + req.params.name);
 });
 
-
+app.get("/hellow/:id([0-9]{5})/:name([a-z]{5})",(req, res)=>{ //정규표현식: 0~9까지 5자리만 받는다
+    res.send("id : " + req.params.id + " name " + req.params.name);
+});
 
 app.listen(port, host, ()=>{
     console.log(`Application Server running at http://${host}:${port}`);
