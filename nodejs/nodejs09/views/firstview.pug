@@ -1,0 +1,20 @@
+doctype html
+html
+    head
+        title = "hellow Pug"
+        style.
+            #division{
+                background-color:coral;
+                color:white;
+                //- width: 100px;
+                //- height: 200px;
+            }
+        style
+            include pug.css
+    body
+        h1 hello world
+        p.greetings#people Hello World
+        div.container.colum.main#division.style(width = "100", height = "100")
+            | To insert multiline text,
+            br
+            | You can use the pipe operator.

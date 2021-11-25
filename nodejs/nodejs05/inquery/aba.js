@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = "./";
 const targetPath = "../temp/";
-const bufSize = 2048;
+const bufSize = 20480;
 let buf = Buffer.alloc(bufSize);
 
 let fileName = "vid", f_extens = ".mp4";
@@ -19,13 +19,15 @@ fs.readdir(path, (err, files)=>{
                size = stats.size;
                console.log("fileName : "+file+", fileSize : "+size);
                fs.open(targetPath + copyFile, copyType, (err, wfd)=>{
-                  
+                  let percent = 1;
                   while(size>0){
                       let data = fs.readSync(rfd, buf, 0, bufSize, position);
-                      console.log(data, buf);
-                      fs.writeSync(wfd, buf, 0, data, position);
+                      
+                      
+                      if(data>0) fs.writeSync(wfd, buf, 0, data, position);
                       position += bufSize;
                       size -= bufSize;
+                      console.log((position/stats.size*100).toFixed(1)+"%");
                   } 
                    fs.close(wfd, (err)=>{if(err) return console.error(err);})
                });

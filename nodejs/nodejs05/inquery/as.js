@@ -1,8 +1,8 @@
 const fs = require("fs");
-const bufSize = 8;
+const bufSize = 1024;
 const buf1 = Buffer.alloc(bufSize);
 
-let fileName = "input", f_extends = ".txt";
+let fileName = "vid", f_extends = ".mp4";
 let readType = "r+", copyType = "w+";
 let path = "./", targetPath = "../temp/";
 let d = new Date(); d = "_"+d.getTime();
@@ -15,7 +15,7 @@ let size, position = 0;
 fs.readdir("./", (err, files)=>{ 
     if(err) console.error(err);
     files.forEach((file)=>{
-        if(fileName ==="input.txt"){
+        if(fileName ==="vid.mp4"){
          fs.stat(fileName, (err, stats)=>{
             size = stats.size; 
             console.log(size);

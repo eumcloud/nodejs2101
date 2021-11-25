@@ -13,7 +13,7 @@ var server = http.createServer((req,res)=>{
 });
 
 server.listen(port, homePage, ()=>{
-    console.log(`포르쉐AG서버가 달리고 있습니당.. Porsche AG ruuning.... `)
+    console.log(`포르쉐AG서버가 달리고 있습니당.. Porsche AG running.... `)
 });
 
 //http://${homePage}:${port}/

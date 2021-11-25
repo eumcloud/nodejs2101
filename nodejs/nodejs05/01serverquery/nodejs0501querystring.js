@@ -9,5 +9,5 @@ var server = http.createServer((req, res)=>{
 });
 
 server.listen(port, strIp, ()=>{
-    console.log(`Server running at http://${strIp}:${poert}`);
+    console.log(`Server running at http://${strIp}:${port}`);
 });
