@@ -4,3 +4,4 @@ temp/
 README.md
 goorm.manifest
 node_modules/
+.env
