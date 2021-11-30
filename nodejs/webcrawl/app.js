@@ -13,16 +13,28 @@ const getProducts = ()=>{
     console.log("Starts-------");  
     
     request({
-       url: "https://www.greating.co.kr/planMeals/menuPreview?mealType=1",
+       url: "https://search.shopping.naver.com/search/category?catId=50002017",
        method: "GET" 
     },(err, res, body)=>{
         if(err) return console.error(err);
         if(res.statusCode ===200){
             console.log("response ok");
-            console.log(body);
+            
+            // const bodyDecoded = iconv.decode(body, "utf-8");
+            // console.log(body);
+            
+            const $ = cheerio.load(body);
+            const dataChose = $(".basicList_link__1MaTN title").toArray();
+            const result = [];
+            dataChose.forEach((div)=>{
+
+            });
+            
+            console.log(dataChose);
     }  
     }
   );
+    
 };
 
 getProducts();
